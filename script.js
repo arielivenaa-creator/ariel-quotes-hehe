@@ -40,7 +40,10 @@ window.addEventListener("DOMContentLoaded", () => {
     { content: "Hiduplah sebagaimana mestinya", author: "Talitha Anindya Salsabila" },
     { content: "Everything you lose is a step you take", author: "Rossa Maria Gultom" },
     { content: "Jadilah seperti bunga yang memberi keharuman bahkan kepada yang meremasnya", author: "Abisali Faiq Mustaqim" },
-    { content: "Lebih mudah menebak pikiran orang pintar, dari pada orang bodoh.", author: "Faishal Ammar Ardian" }
+    { content: "Lebih mudah menebak pikiran orang pintar, dari pada orang bodoh.", author: "Faishal Ammar Ardian" },
+    { content: "Mimpi besar tidak cukup hanya dibayangkan, ia butuh aksi nyata setiap hari.", author: "Radithya Putra Anggani" },
+    { content: "Dreams are seeds, In struggles they grow, Never fear the storms, All will bloom in time, Rays of hope guide your life.", author: "Willy Anggara Putra" },
+    { content: "Motivasi lah dirimu untuk menggapai hal yang sulit, karena hal itu kita bisa tau apa artinya bersyukur", author: "Arya Mandalika" }
   ];
 
   // Shuffle array untuk urutan acak awal
