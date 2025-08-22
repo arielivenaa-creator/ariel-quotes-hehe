@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
     currentIndex++;
 
     quoteBtn.classList.remove("loading");
-    quoteBtn.innerText = "New Quote";
+    quoteBtn.innerText = "Next Quote";
   }
 
   // 🔊 Speech synthesis
