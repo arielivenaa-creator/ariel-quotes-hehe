@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
         discordBtn = document.querySelector(".discord"),
         synth = "speechSynthesis" in window ? window.speechSynthesis : null;
 
-  // Array quote dari data siswa XII-1 + Maharino Ariel Ivena
+  // array quote dari data siswa XII-1
   const quotes = [
     { content: "Adapt or Die!", author: "Maharino Ariel Ivena" },
     { content: "meskipun jenuh, jorong-jorong tetap nomor 1", author: "Raifal Amri" },
@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
     { content: "Motivasi lah dirimu untuk menggapai hal yang sulit, karena hal itu kita bisa tau apa artinya bersyukur", author: "Arya Mandalika" }
   ];
 
-  // Shuffle array untuk urutan acak awal
+  // shuffle array untuk urutan acak awal
   let shuffledQuotes = [...quotes];
   let currentIndex = 0;
 
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   shuffleArray(shuffledQuotes);
 
-  // Fungsi ambil quote tanpa duplikat sampai habis, baru shuffle lagi
+  // buat ini ambil quote tanpa duplikat sampai habis, baru shuffle lagi
   function randomQuote() {
     quoteBtn.classList.add("loading");
     quoteBtn.innerText = "Loading Quote...";
@@ -99,15 +99,11 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // 📋 Copy
   if (copyBtn) {
     copyBtn.addEventListener("click", () => {
       navigator.clipboard.writeText(quoteText.innerText);
     });
   }
-
-  // 🐦 Discord share
   if (discordBtn) {
     discordBtn.addEventListener("click", () => {
       let discordUrl = `https://discord.com/users/755071629389856848?quote=${encodeURIComponent(
@@ -116,12 +112,8 @@ window.addEventListener("DOMContentLoaded", () => {
       window.open(discordUrl, "_blank");
     });
   }
-
-  // 🔄 Ambil quote baru saat klik button
   if (quoteBtn) {
     quoteBtn.addEventListener("click", randomQuote);
   }
-
-  // 🚀 Ambil 1 quote di awal
   randomQuote();
 });
