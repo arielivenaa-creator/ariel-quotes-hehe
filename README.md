@@ -7,4 +7,4 @@ Saya mengumpulkan semua quotes teman saya dan dijadikan satu menjadi sebuah proj
 
 yoo my friends whoever yall , if you’re seeing this I hope you’re doing very well, very veryyy well.
 Believe me, i miss those moments and all of you 
-shoutout xii-1, luuv y'all❤😘
+shoutout xii-1, luuv y'all❤😘 sehat2 ya olll
