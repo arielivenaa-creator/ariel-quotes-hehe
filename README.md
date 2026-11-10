@@ -1,4 +1,4 @@
-# ariel-quotes-hehe
+# 🙌haii everyonee, buset sempet2 nya lau liat ini hahah
 Saya mengerjakan project kecil ini untuk meningkatkan skill mengetik coding saya.
 Pada awalnya ini adalah Project Quotes Generator yang dihubungkan dengan API quotes,
 hinnga suatu hari saya berpikir project ini dijadikan quotes buku tahunan hehe.
