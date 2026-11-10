@@ -78,7 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
     quoteBtn.innerText = "Next Quote";
   }
 
-  // 🔊 Speech synthesis
+  // Speech synthesis
   if (synth && speechBtn) {
     speechBtn.addEventListener("click", () => {
       if (!quoteBtn.classList.contains("loading")) {
@@ -116,4 +116,71 @@ window.addEventListener("DOMContentLoaded", () => {
     quoteBtn.addEventListener("click", randomQuote);
   }
   randomQuote();
+
+  // MUSIK & PIRINGAN BERPUTAR
+  const bgMusic = document.getElementById("background-music");
+  const volumeBtn = document.getElementById("volume-control");
+  const volumeIcon = document.getElementById("volume-icon");
+  const discContainer = document.getElementById("disc-container");
+  const disc = document.getElementById("disc");
+
+  if (bgMusic) {
+    bgMusic.volume = 0.5;
+
+    // Jalankan piringan saat audio memutar
+    bgMusic.addEventListener("play", () => {
+      disc.classList.add("playing");
+    });
+
+    // Hentikan piringan saat audio dipause/berhenti
+    bgMusic.addEventListener("pause", () => {
+      disc.classList.remove("playing");
+    });
+
+    // Autoplay & bypass kebijakan Autoplay browser
+    const playAudio = () => {
+      bgMusic.play().then(() => {
+        disc.classList.add("playing");
+      }).catch(() => {
+        // Jika diblokir browser, tunggu interaksi pertama user
+        const startOnUserClick = () => {
+          bgMusic.play();
+          disc.classList.add("playing");
+          document.removeEventListener("click", startOnUserClick);
+        };
+        document.addEventListener("click", startOnUserClick);
+      });
+    };
+
+    playAudio();
+
+    // Klik Piringan Musik untuk Play / Pause
+    if (discContainer) {
+      discContainer.addEventListener("click", () => {
+        if (bgMusic.paused) {
+          bgMusic.play();
+        } else {
+          bgMusic.pause();
+        }
+      });
+    }
+
+    // Klik Tombol Volume untuk Mute / Unmute
+    if (volumeBtn) {
+      volumeBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // Biar gak bentrok klik piringan
+        if (bgMusic.muted) {
+          bgMusic.muted = false;
+          volumeIcon.classList.remove("fa-volume-mute");
+          volumeIcon.classList.add("fa-volume-up");
+          volumeBtn.classList.remove("muted");
+        } else {
+          bgMusic.muted = true;
+          volumeIcon.classList.remove("fa-volume-up");
+          volumeIcon.classList.add("fa-volume-mute");
+          volumeBtn.classList.add("muted");
+        }
+      });
+    }
+  }
 });
