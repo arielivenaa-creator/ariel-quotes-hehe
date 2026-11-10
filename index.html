@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
+
+    <audio id="background-music" src="audio/Project Pop - Ingatlah Hari Ini.wav" loop autoplay></audio>
+
+    <div class="music-player-widget">
+
+      <div class="disc-container" id="disc-container" title="Klik piringan untuk Play/Pause Musik">
+        <div class="disc" id="disc">
+          <div class="disc-center"></div>
+        </div>
+      </div>
+
+      <div id="volume-control" class="volume-btn" title="Mute/Unmute Volume">
+        <i class="fas fa-volume-up" id="volume-icon"></i>
+      </div>
+    </div>
+
     <div class="wrapper">
       <header>Kata kata hari ini bang</header>
       <div class="content">
